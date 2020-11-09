@@ -86,6 +86,7 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Attributes\ExceptionHandlerAttribute.cs" />
+    <Compile Include="Exceptions\CustomException.cs" />
     <Compile Include="Handlers\ExceptionHandler.cs" />
     <Compile Include="Responses\GenericErrorResponse.cs" />
     <Compile Include="Controllers\HomeController.cs" />

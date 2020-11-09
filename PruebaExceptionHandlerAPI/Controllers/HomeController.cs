@@ -1,4 +1,5 @@
 ﻿using PruebaExceptionHandlerAPI.Attributes;
+using PruebaExceptionHandlerAPI.Exceptions;
 using PruebaExceptionHandlerAPI.Handlers;
 using PruebaExceptionHandlerAPI.Services;
 using System;
@@ -53,6 +54,23 @@ namespace PruebaExceptionHandlerAPI.Controllers
             var aString = this.homeService.GetString();
 
             return Ok(new { variable = aString });
+        }
+
+        // Method throwing CustomException
+        [HttpGet]
+        public IHttpActionResult Custom()
+        {
+            try
+            {
+                throw new CustomException("A custom exception thrown.");
+            }
+            catch (Exception ex)
+            {
+                // Another logic before handling the exception
+                this.exceptionHandler.Handle(ex);
+            }
+
+            return Ok(new { variable = "value" });
         }
     }
 }

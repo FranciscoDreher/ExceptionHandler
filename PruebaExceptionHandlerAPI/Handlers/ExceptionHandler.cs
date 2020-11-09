@@ -25,6 +25,8 @@ namespace PruebaExceptionHandlerAPI.Handlers
                 //     customHandling(...);
                 // }
 
+                Debug.Write(exception);
+
                 this.ExceptionHandling(HttpStatusCode.InternalServerError, @"Internal Server Error.");
             }
             return;

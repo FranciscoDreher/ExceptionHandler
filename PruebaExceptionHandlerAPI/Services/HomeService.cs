@@ -6,7 +6,7 @@ namespace PruebaExceptionHandlerAPI.Services
     {
         public string GetString()
         {
-            throw new Exception("Excepción from HomeService");
+            throw new Exception("Exception from HomeService");
 
             return "value";
         }
